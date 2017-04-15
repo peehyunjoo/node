@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+	수정
+	<form action="/update" method="post">
+	<%
+		for(var i=0;i<rows.length;i++){%>
+	<input type="text" id="nickname" name="nickname" value="<%=rows[i].nickname%>">
+	<input type="text" id="id" name="id" value="<%=rows[i].id%>">
+	<%}%>
+	<input type="submit" value="수정">수정
+	</form>
+	
+	</body>
+</html>
