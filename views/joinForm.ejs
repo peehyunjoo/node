@@ -8,7 +8,7 @@
         $(document).ready(function(){
                 $("#btnJoin").click(
                         function(){
-                                if($("#id").val() == "")
+                        /*        if($("#id").val() == "")
                                 {
                                         alert("아이디를 꼭 입력 하세요");
                                         $("#id").focus();
@@ -23,10 +23,11 @@
 				if($("#nickname").val()==""){
 					alert("닉네임을 입력해주세요");
 					$("#nickname").focus();
-				}
+				}*/
                                 $("#joinForm").submit();
                         }
                         );
+
 });
 </script>
 </head>
@@ -45,7 +46,18 @@
                                 <th>닉네임</th>
                                 <td><input type="text" name="nickname"></td>
                         </tr>
-
+			<tr>
+				<th>tel</th>
+				<td><input type="text" name="tel" id="tel" size="12"></td>
+			</tr>
+			<tr>
+				<th>phone</th>
+				<td><input type="text" name="phone" id="phone"</td>
+			</tr>
+			<tr>
+				<th>email</th>
+				<td><input type="text" name="text" id="email"></td>
+			</tr>
                         <tr>
                                 <td colspan="2">
                                         <input type="button" id="btnJoin" name="join" value="가입">

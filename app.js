@@ -11,6 +11,7 @@ var join = require('./routes/joinForm');
 var login = require('./routes/loginForm');
 var mypage = require('./routes/mypageForm');
 var user_update = require('./routes/updateForm');
+var attendance = require('./routes/attendance');
 var session = require('express-session');
 var app = express();
 
@@ -32,7 +33,7 @@ app.use(session({
 }));
 app.use(function(req, res, next) {
   res.locals.user_id = req.session.user_id;
-  console.log(req.session);
+  res.locals.idx = req.session.idx;
   next();
 });
 
@@ -42,6 +43,7 @@ app.use('/join', join);
 app.use('/login',login);
 app.use('/mypage',mypage);
 app.use('/update',user_update);
+app.use('/attendance',attendance);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
