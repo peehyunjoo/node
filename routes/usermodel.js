@@ -2,7 +2,7 @@ var mysql_dbc = require('./db_con');
 var sequelize = mysql_dbc.sequelize;
 //var Sequelize = mysql_dbc.Sequelize;
 var Sequelize = mysql_dbc.Sequelize;
-module.exports= sequelize.define('user',{
+module.exports=sequelize.define('user',{
         /*        id : {
                         type:Sequelize.INTEGER,
                         primaryKey:true,
@@ -40,5 +40,7 @@ module.exports= sequelize.define('user',{
                 tableName: 'user',
                 timestamps:false
 	}
-);
+	);
+	
+
 

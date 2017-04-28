@@ -6,6 +6,7 @@ var crypto = require('crypto');
 //mysql_dbc.open(connection);
 //var mysql_dbc = require('./db_con');
 var User = require('./usermodel');
+var attendance = require('./usermodel2');
 router.get('/',function(req,res){
 	res.render('login');
 });
@@ -15,16 +16,14 @@ router.post('/',function(req,res){
 	User.findOne({
 		where:{id:id}
 	}).then(function(results){	
-			/*var password = results.password;
-        		var salt = results.salt;
-        		var HashPass=crypto.createHash("sha512").update(pw+salt).digest("hex");*/
 			var password = results.pass;
 			var HashPass=crypto.createHash("sha256").update(pw).digest("hex");
 			if(HashPass === password){
                 		console.log('로그인 성공');
                 		req.session.user_id=id;
-                		console.log(req.session.user_id);
-                		res.redirect("/");
+				req.session.idx=results.idx;
+                		//res.redirect("/");
+                		res.redirect('/attendance');
                 	}else{
                 		console.log("로그인 실패");
                         	res.render("login");
