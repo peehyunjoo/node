@@ -1,18 +1,28 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-	수정
+<%layout('layout') -%>
+
+	<style>
+                label{
+                        text-align:center;
+                }
+                .login{
+                text-align:center;
+                }
+                form{
+                        margin-top:5%;
+                }
+        </style>
 	<form action="/update" method="post">
 	<%
 		for(var i=0;i<rows.length;i++){%>
-	<input type="text" id="nickname" name="nickname" value="<%=rows[i].nickname%>">
-	<input type="hidden" id="id" name="id" value="<%=rows[i].id%>">
-	<%}%>
-	<input type="submit" value="수정">
-	</form>
 	
-	</body>
-</html>
+	<div class="form-group row">
+        <label for="example-search-input" class="col-2 col-form-label">닉네임 수정</label>
+                <div class="col-10">
+                        <input class="form-control" name="phone" type="text" value="<%=rows[i].phone%>" id="phone">
+                </div>
+         </div>
+	<%}%>
+	<div class="form-group login">
+	<button type="submit" class="btn btn-primary">수정</button>
+	</div>
+	</form>

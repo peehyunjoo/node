@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-        <meta charset='utf-8'>
-        <script src="//code.jquery.com/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<%layout('layout') -%>
+	<style>
+		label{
+			text-align:center;
+		}
+                .login{
+                	text-align:center;
+                }
+                form{
+                        margin-top:5%;
+                }
+        </style>
+
         <script>
         $(document).ready(function(){
-                $("#btnJoin").click(
+                /*$("#btnJoin").click(
                         function(){
                         /*        if($("#id").val() == "")
                                 {
@@ -23,18 +30,19 @@
 				if($("#nickname").val()==""){
 					alert("닉네임을 입력해주세요");
 					$("#nickname").focus();
-				}*/
+				}
+				alert('test');
+				return false;
                                 $("#joinForm").submit();
                         }
-                        );
+                        );*/
 
 });
 </script>
 </head>
 <body>
         <form id="joinForm" action="/join" method="post">
-                <table width="400" border="1">
-                        <tr>
+                        <!--<tr>
                                 <th>아이디</th>
                                 <td><input type="text" name="id" id="id" size="12" maxLength="12"></td>
                         </tr>
@@ -63,8 +71,50 @@
                                         <input type="button" id="btnJoin" name="join" value="가입">
                                         <input type="reset" name="cancel"value="취소">
                                 </td>
-                        </tr>
-                </table>
+                        </tr>-->
+
+		<div class="form-group row">
+                	<label for="example-text-input" class="col-2 col-form-label">id</label>
+        		<div class="col-10">
+                		<input class="form-control" name="id" type="text" value="id" id="id">
+        		</div>
+        	</div>
+        	<div class="form-group row">
+        		<label for="example-search-input" class="col-2 col-form-label">password</label>
+                	<div class="col-10">
+                        	<input class="form-control" name="password" type="password" value="password" id="password">
+                	</div>
+                </div>
+		<div class="form-group row">
+                        <label for="example-search-input" class="col-2 col-form-label">nickname</label>
+                        <div class="col-10">
+                                <input class="form-control" name="nickname" type="text" value="nickname" id="nickname">
+                        </div>
+                </div>
+		<div class="form-group row">
+                        <label for="example-search-input" class="col-2 col-form-label">tel</label>
+                        <div class="col-10">
+                                <input class="form-control" name="tel" type="text" value="tel" id="tel">
+                        </div>
+                </div>
+		<div class="form-group row">
+                        <label for="example-search-input" class="col-2 col-form-label">phone</label>
+                        <div class="col-10">
+                                <input class="form-control" name="phone" type="phone" value="phone" id="phone">
+                        </div>
+                </div>
+		<div class="form-group row">
+                        <label for="example-search-input" class="col-2 col-form-label">email</label>
+                        <div class="col-10">
+                                <input class="form-control" name="email" type="text" value="email" id="email">
+                        </div>
+                </div>
+         	<div class="form-group login">
+         		<!--<input type="button" id="btnJoin" name="join" value="가입">-->
+			<button type="submit" class="btn btn-primary">가입</button>
+			<button type="reset" class="btn btn-danger">취소</button>
+		</div>
+
         </form>
 
 </body>

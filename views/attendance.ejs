@@ -1,14 +1,25 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-
-	attendance페이지
+<%layout('layout') -%>
+	
+	<style>
+		label{
+			text-align:center;
+		}
+		.login{
+                text-align:center;
+        	}
+        	form{
+                	margin-top:5%;
+        	}
+	</style>
 	<form action="/attendance" method="post">
-	<input type="text" id="memo" name="memo">
-	<input type="submit" value="출첵" id="출첵">
-	</form>
-	</body>
-</html>
+        <div class="form-group row">
+        <label for="example-search-input" class="col-2 col-form-label">memo</label>
+                <div class="col-10">
+                        <input class="form-control" name="memo" type="search" value="memo" id="memo">
+                </div>
+                </div>
+         <div class="form-group login">
+                <button type="submit" class="btn btn-primary">출첵</button>
+		<button type="reset" class="btn btn-danger">취소</button>
+         </div>
+         </form>

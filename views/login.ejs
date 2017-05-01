@@ -1,15 +1,32 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+<%layout('layout') -%> 
+<style>
+	label{
+		text-align:center;
+    	}
+	.login{
+		text-align:center;	
+	}
+	form{
+		margin-top:5%;
+	}
+</style> 
+<body>
 
-	login페이지
 	<form action="/login" method="post">
-	<input type="text" id="id" name="id">
-	<input type="text" id="password" name="password">
-	<input type="submit" value="login">
-	</form>
-	</body>
-</html>
+	<div class="form-group row">
+  		<label for="example-text-input" class="col-2 col-form-label">id</label>
+  	<div class="col-10">
+    		<input class="form-control" name="id" type="text" value="id" id="id">
+  	</div>
+	</div>
+	<div class="form-group row">
+	<label for="example-search-input" class="col-2 col-form-label">password</label>
+  		<div class="col-10">
+    			<input class="form-control" name="password" type="search" value="password" id="password">
+  		</div>
+		</div>
+	 <div class="form-group login">
+	 	<button type="submit" class="btn btn-primary">로그인</button>
+	 </div>			
+	 </form>
+</body>

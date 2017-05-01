@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+  </head>
+  <body bgcolor="pink">
+    	<nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="background-color:#FFE8FF">
+  		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    			<span class="navbar-toggler-icon"></span>
+  		</button>
+	<a class="navbar-brand" href="#">pizzu</a>
+  	<div class="collapse navbar-collapse" id="navbarText">
+    	<ul class="navbar-nav mr-auto"></ul>
+    
+	<span class="navbar-text">
+    	 <%if(user_id){%>
+                <a class="btn btn-default" href="http://192.168.56.101:3000/logout" role="button">로그아웃</a>
+                <a class="btn btn-default"  href="http://192.168.56.101:3000/mypage?id=<%=user_id%>">마이페이지</a>
+        <%=user_id%>
+        <%}else{%>
+                <a class="btn btn-default" href="http://192.168.56.101:3000/join">회원가입</a>
+                <a class="btn btn-default" href="http://192.168.56.101:3000/login">로그인</a>
+        <%}%>
+
+    	</span>
+  	</div>
+	</nav>
+	<%- body %>
+  </body>
+</html>

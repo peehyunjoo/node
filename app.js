@@ -12,13 +12,14 @@ var login = require('./routes/loginForm');
 var mypage = require('./routes/mypageForm');
 var user_update = require('./routes/updateForm');
 var attendance = require('./routes/attendance');
+var engine = require('ejs-locals');
 var session = require('express-session');
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+app.engine('ejs',engine);
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));

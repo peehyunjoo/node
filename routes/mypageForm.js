@@ -16,12 +16,15 @@ router.get('/',function(req,res,next){
 
         	}
 	}); */
-
-	User.findAll({
+	User.findOne({
+                where:{id:id}
+        }).then(function(results){
+/*	User.findAll({
 		where : {
 			id : req.query.id
 		}
-	}).then(function(result){
+	}).then(function(result){*/
+		res.json("rows"+results);
 		res.render('mypage',{rows:result});
 	}).catch(function(err){
 		res.json(err);
