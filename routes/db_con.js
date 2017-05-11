@@ -21,10 +21,16 @@ module.exports= {
 			}
 		})
 	},
-	sequelize : new Sequelize('sharedb','zzu','zzu!1234^',{
+	/*sequelize : new Sequelize('sharedb','zzu','zzu!1234^',{
        			host:'210.183.39.51',
-        		dialect:'mysql',
-	}),
+        		host:'localhost',
+			dialect:'mysql',
+	}),*/
+
+	sequelize : new Sequelize('sharedb','root','',{
+                        host:'localhost',
+                        dialect:'mysql',
+        }),
 	Sequelize: Sequelize
 	
 };

@@ -24,8 +24,8 @@ router.get('/',function(req,res,next){
 			id : req.query.id
 		}
 	}).then(function(result){*/
-		res.json("rows"+results);
-		res.render('mypage',{rows:result});
+		console.log("rows"+results);
+		res.render('mypage',{rows:results});
 	}).catch(function(err){
 		res.json(err);
 	})

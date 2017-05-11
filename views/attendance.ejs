@@ -1,5 +1,20 @@
 <%layout('layout') -%>
-	
+	<script type="text/javascript">
+	function handleFileSelect(){
+	  var files = $('input[name=file_name]')[0].files; //[object FileList]
+	  var file = files[0];                             //[object File]
+	  if(files && file){
+	    var reader = new FileReader();
+	    reader.onload = function(readerEvt){
+	      console.log(readerEvt); //[object ProgressEvent]
+	      var binaryString = readerEvt.target.result;
+	      document.getElementById("upload_file").value = btoa(binaryString);
+	    }
+	    reader.readAsBinaryString(file); //여기서 reader.onload 실행.
+	    console.log(document.getElementById("upload_file").value);
+	  }
+	}
+</script>	
 	<style>
 		label{
 			text-align:center;
@@ -15,9 +30,17 @@
         <div class="form-group row">
         <label for="example-search-input" class="col-2 col-form-label">memo</label>
                 <div class="col-10">
-                        <input class="form-control" name="memo" type="search" value="memo" id="memo">
+                        <input class="form-control" name="memo" type="text" id="memo">
                 </div>
+         </div>
+	<div class="form-group row">
+	<label for="example-search-input" class="col-2 col-form-label">file</label>
+                <div class="col-10">
+                        <input class="form-control" name="file_name" type="file" id="file_name"value="Select Image" onchange="handleFileSelect()">
+			<input type="hidden" name="upload_file" id="upload_file">
                 </div>
+         </div>
+
          <div class="form-group login">
                 <button type="submit" class="btn btn-primary">출첵</button>
 		<button type="reset" class="btn btn-danger">취소</button>
