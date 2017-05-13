@@ -1,1 +1,18 @@
 <%layout('layout') -%>
+<p>
+<%="rows = " + rows%>
+</p>
+
+<%for(var i=0;i<rows.length;i++){%>
+	<table class="table">
+		<tr>
+			<th>idx</th>
+			<th>memo</th>
+			<th></th>
+		</tr>
+		<tr>
+			<td><%=rows[i].idx%></td>
+			<td><%=rows[i].memo%></td>
+		</tr>
+	</table>	
+<%}%>
